@@ -1427,7 +1427,7 @@
                 if (img.scrollable) {
                     return `
                         <div class="project-image span-${img.span} scrollable">
-                            <img src="${img.src}" alt="${img.alt || project.title}" class="project-image-wide">
+                            <img src="${img.src}" alt="${img.alt || project.title}" class="project-image-wide" loading="lazy">
                             <div class="scroll-hint" aria-hidden="true">
                                 <span class="horizontal-indicator" aria-hidden="true">
                                     <span class="indicator primary"></span>
@@ -1438,7 +1438,7 @@
                         </div>
                     `;
                 }
-                return `<img src="${img.src}" alt="${img.alt || project.title}" class="project-image span-${img.span}">`;
+                return `<img src="${img.src}" alt="${img.alt || project.title}" class="project-image span-${img.span}" loading="lazy">`;
             }).join('');
 
             return `
