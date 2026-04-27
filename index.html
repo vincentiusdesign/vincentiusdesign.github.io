@@ -1580,9 +1580,9 @@
             entries.forEach(entry => {
                 // Only follow the scroll with focus if the user is already interacting
                 if (entry.isIntersecting && document.activeElement !== document.body) {
-                    setTimeout(() => {
+                    if (!('ontouchstart' in window)) {
                         entry.target.focus({ preventScroll: true });
-                    }, 600);
+                    }
                 }
             });
         }, { threshold: 0.6 });
