@@ -1578,7 +1578,9 @@
             entries.forEach(entry => {
                 // Only follow the scroll with focus if the user is already interacting
                 if (entry.isIntersecting && document.activeElement !== document.body) {
-                    entry.target.focus({ preventScroll: true });
+                    setTimeout(() => {
+                        entry.target.focus({ preventScroll: true });
+                    }, 100);
                 }
             });
         }, { threshold: 0.6 });
