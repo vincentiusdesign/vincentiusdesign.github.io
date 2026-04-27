@@ -1574,13 +1574,15 @@
             });
         });
 
+        let scrollTimeout;
+
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 // Only follow the scroll with focus if the user is already interacting
                 if (entry.isIntersecting && document.activeElement !== document.body) {
                     setTimeout(() => {
                         entry.target.focus({ preventScroll: true });
-                    }, 300);
+                    }, 100);
                 }
             });
         }, { threshold: 0.6 });
