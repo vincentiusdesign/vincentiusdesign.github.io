@@ -644,12 +644,6 @@
             overflow-y: auto;
 
             /* The Mask: Black (visible) with variable opacity at edges */
-            mask-image: linear-gradient(to bottom, 
-                rgba(0,0,0,var(--mask-top-opacity)) 0%, 
-                black var(--font-size-xl),
-                black calc(100% - var(--font-size-xl)), 
-                rgba(0,0,0,var(--mask-bottom-opacity)) 100%
-            );
             -webkit-mask-image: linear-gradient(to bottom, 
                 rgba(0,0,0,var(--mask-top-opacity)) 0%, 
                 black var(--font-size-xl),
@@ -657,13 +651,20 @@
                 rgba(0,0,0,var(--mask-bottom-opacity)) 100%
             );
 
+            mask-image: linear-gradient(to bottom, 
+                rgba(0,0,0,var(--mask-top-opacity)) 0%, 
+                black var(--font-size-xl),
+                black calc(100% - var(--font-size-xl)), 
+                rgba(0,0,0,var(--mask-bottom-opacity)) 100%
+            );
+
             /* This transition works because @property turned the variables into numbers */
             transition: --mask-top-opacity 0.2s ease, --mask-bottom-opacity 0.2s ease-out;
 
-            mask-repeat: no-repeat;
             -webkit-mask-repeat: no-repeat;
-            mask-size: 100% 100%;
+            mask-repeat: no-repeat;
             -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
         }
 
         /* Toggled by existing JavaScript */
@@ -707,8 +708,8 @@
             overflow-y: hidden;
             padding-right: var(--spacing-md);
 
-            mask-image: linear-gradient(to right, black calc(100% - var(--spacing-md)), transparent 100%);
             -webkit-mask-image: linear-gradient(to right, black calc(100% - var(--spacing-md)), transparent 100%);
+            mask-image: linear-gradient(to right, black calc(100% - var(--spacing-md)), transparent 100%);
         }
 
         .project-image-wide {
@@ -816,7 +817,7 @@
             }
         }
 
-        @media (min-width: 160em) /* 2560px */ {
+        @media (min-width: 161em) /* over 2560px */ {
             .fixed-header, body {
                 max-width: var(--max-layout-width);
                 margin-left: auto;
@@ -829,7 +830,7 @@
             }
         }
 
-        @media (min-width: 121em) /* roughly 1921px */ {
+        @media (min-width: 121em) /* over 1920px */ {
             html {
                 font-size: 112.5%;
                 -webkit-text-size-adjust: 112.5%;
@@ -1024,11 +1025,15 @@
                         <h1 class="about-label">Creative Strategy and Visual Identity</h1>
                         <p class="about-statement">Con&shy;cep&shy;tu&shy;al In&shy;quir&shy;y,<br>For&shy;mal Log&shy;ic</p>
                         <p class="about-description">
-                            I explore the intersection of technical structure and subversion. From modernist bureaucratic layouts to experimental logotypes, my work utilizes formal design principles to investigate unique narratives and historical contexts.
+                            I explore the intersection of technical structure and subversion. From experimental layouts to refined type design, my work utilizes formal design principles to investigate unique narratives and historical contexts.
                         </p>
                         <noscript>
                             <p style="color: #EE0000;" class="about-description">
-                                <b>Note:</b> This site uses JavaScript for button functionality and to display project galleries. Please enable it for the best experience. View my <a href=""><b>portfolio PDF</b></a> or contact me at <a href="mailto:vincentiusdesign@gmail.com"><b>vincentiusdesign@gmail.com</b></a>.
+                                <b>Note:</b> This site uses JavaScript for button functionality and to display project galleries. Please enable it for the best experience.
+                                <br>
+                                View my <a href="images/vincent-garcia-portfolio.pdf"><b>portfolio PDF</b></a>
+                                <br>
+                                Contact me at <a href="mailto:vincentiusdesign@gmail.com"><b>vincentiusdesign@gmail.com</b></a>
                             </p>
                         </noscript>
                     </div>
@@ -1053,11 +1058,11 @@
                         <li class="skill-tag">InDesign</li>
                         <li class="skill-tag">Illustrator</li>
                         <li class="skill-tag">Photoshop</li>
-                        <li class="skill-tag">Figma</li>
+                        <li class="skill-tag">Glyphs</li>
                         <li class="skill-tag">Grid Systems</li>
                         <li class="skill-tag">UI</li>
+                        <li class="skill-tag">Figma</li>
                         <li class="skill-tag">Logo Design</li>
-                        <li class="skill-tag">Glyphs</li>
                         <li class="skill-tag">Art History</li>
                         <li class="skill-tag">Design History</li>
                         <li class="skill-tag">HTML</li>
@@ -1358,19 +1363,17 @@
             ],
             typeDesign: [
                 {
-                    title: "Snack&shy;ies",
-                    meta: "Sans-serif Wordmark",
-                    description: `For the owner of the Mobil Gas Station in New York City, located on 13th street and 8th avenue. The client commissioned a logo to brand his own line of snacks and products. Following research on commercial food branding, I began working with Franklin Gothic Demi as a base font. Though it is typically used in publications and corporate identities, there is a subtle playfulness I wanted to emphasize through the change in context and use of saturated colors.
+                    title: "Posture",
+                    meta: "Italic Inspired Roman Typeface",
+                    description: `Posture is inspired by the movement and flow of italic letterforms. This sans-serif Roman typeface leverages monowidth strokes and modularity in order to give it consistency. Motion is achieved through the adoption of italic features, specifically in letters with shoulders or counters, and spurs or descenders. The juxtaposition of the italic-derived triangular forms and the rounded rectangular structures that serve as a foundation generates both a sense of tension and harmony that establishes this typeface’s unique rhythm.
 
-                    Realizing the terminals are sheared (angled), I altered them to be horizontal to give the letterforms uniformity because I intended to warp the type later in the project to add the dynamism found in most corporate food logos.
+                    The numbers are tabular lining figures also constructed in a modular method.
 
-                    Modifying the font allowed me to analyze the nuances of the letters in great detail. The open counters in the capital and lowercase <i>s</i>'s do not match the width or shape of the eye of the <i>e</i>, the counters in the <i>a</i>, or the negative space in any of the other characters. I’m sure this difference was accounted for in the overall balance of the entire character set. However, when it comes to the small sample size used in this logo the inconsistency becomes noticeable. I found that the <i>s</i> in Agipo Condensed Bold resembles the forms I was looking for, but the counters are more oval and the terminals are flared compared to the subtle modulation of Franklin Gothic. Through many iterations the modified <i>s</i> that I ended up with better serves this logo's needs. Through this process, I elevated my sensibility for type design.`,
+                    Punctuation, symbols, and glyphs are assembled by reusing strokes, and even entire letters, when possible. 
+
+                    Despite the extremely thin weight, the overall balance of the characters is best exhibited at smaller type sizes for larger bodies of text.`,
                     images: [
-                        { src: "images/type-design/snackies/snackies.webp", span: 2 },
-                        { src: "images/type-design/snackies/snackies-iteration-1.webp", span: 1 },
-                        { src: "images/type-design/snackies/snackies-iteration-2.webp", span: 1 },
-                        { src: "images/type-design/snackies/snackies-iteration-3.webp", span: 1 },
-                        { src: "images/type-design/snackies/snackies-iteration-4.webp", span: 1 }
+                        { src: "images/type-design/posture/posture-type-specimen.webp", span: 2 }
                     ]
                 },
                 {
@@ -1386,25 +1389,27 @@
                     ]
                 },
                 {
-                    title: "Posture",
-                    meta: "Italic Inspired Roman Typeface",
-                    description: `Posture is inspired by the movement and flow of italic letterforms. This sans-serif Roman typeface leverages monowidth strokes and modularity in order to give it consistency. Motion is achieved through the adoption of italic features, specifically in letters with shoulders or counters, and spurs or descenders. The juxtaposition of the italic-derived triangular forms and the rounded rectangular structures that serve as a foundation generates both a sense of tension and harmony that establishes this typeface’s unique rhythm.
- 
-                    The numbers are tabular lining figures also constructed in a modular method.
+                    title: "Snack&shy;ies",
+                    meta: "Sans-serif Wordmark",
+                    description: `For the owner of the Mobil Gas Station in New York City, located on 13th street and 8th avenue. The client commissioned a logo to brand his own line of snacks and products. Following research on commercial food branding, I began working with Franklin Gothic Demi as a base font. Though it is typically used in publications and corporate identities, there is a subtle playfulness I wanted to emphasize through the change in context and use of saturated colors.
 
-                    Punctuation, symbols, and glyphs were assembled by reusing strokes, and even entire letters, when possible. 
+                    Realizing the terminals are sheared (angled), I altered them to be horizontal to give the letterforms uniformity because I intended to warp the type later in the project to add the dynamism found in most corporate food logos.
 
-                    Despite the extremely thin weight, the overall balance of the characters is best exhibited at smaller type sizes for larger bodies of text.`,
+                    Modifying the font allowed me to analyze the nuances of the letters in great detail. The open counters in the capital and lowercase <i>s</i>'s do not match the width or shape of the eye of the <i>e</i>, the counters in the <i>a</i>, or the negative space in any of the other characters. I’m sure this difference was accounted for in the overall balance of the entire character set. However, when it comes to the small sample size used in this logo the inconsistency becomes noticeable. I found that the <i>s</i> in Agipo Condensed Bold resembles the forms I was looking for, but the counters are more oval and the terminals are flared compared to the subtle modulation of Franklin Gothic. Through many iterations the modified <i>s</i> that I ended up with better serves this logo's needs. Through this process, I elevated my sensibility for type design.`,
                     images: [
-                        { src: "images/type-design/posture/posture-type-specimen.webp", span: 2 }
+                        { src: "images/type-design/snackies/snackies.webp", span: 2 },
+                        { src: "images/type-design/snackies/snackies-iteration-1.webp", span: 1 },
+                        { src: "images/type-design/snackies/snackies-iteration-2.webp", span: 1 },
+                        { src: "images/type-design/snackies/snackies-iteration-3.webp", span: 1 },
+                        { src: "images/type-design/snackies/snackies-iteration-4.webp", span: 1 }
                     ]
                 }
             ],
             illustration: [
                 {
                     title: "Vector Graph&shy;ics",
-                    meta: "2024",
-                    description: `Digital illustrations with bold compositions and a linear style. These are exploratory studies in color theory and concept development. Aiming to subvert the standard notions associated with the subjects.`,
+                    meta: "Digital Illustrations",
+                    description: `Bold compositions in a linear style used to subvert standard notions associated with familiar subjects. These are exploratory studies in color theory and conceptual wit. I approach these as playful palette cleansers to maintain creative agility and offset my more analytical design process.`,
                     images: [
                         { src: "images/illustration/burningboy-screaminghand.webp", span: 2 },
                         { src: "images/illustration/early-bird.webp", span: 1 },
@@ -1574,15 +1579,11 @@
             });
         });
 
-        let scrollTimeout;
-
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 // Only follow the scroll with focus if the user is already interacting
                 if (entry.isIntersecting && document.activeElement !== document.body) {
-                    if (!('ontouchstart' in window)) {
-                        entry.target.focus({ preventScroll: true });
-                    }
+                    entry.target.focus({ preventScroll: true });
                 }
             });
         }, { threshold: 0.6 });
